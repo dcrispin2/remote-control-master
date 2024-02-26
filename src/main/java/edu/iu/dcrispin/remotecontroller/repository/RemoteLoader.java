@@ -13,6 +13,14 @@ public class RemoteLoader implements  IRemoteLoader{
     private static volatile RemoteLoader remote;
     private RemoteLoader(){};
     HashMap<Integer, RemoteControl> remoteControls = new HashMap<>();
+
+    public static IRemoteLoader getInstance() {
+        if (remote == null){
+            remote = new RemoteLoader();
+        }
+        return remote;
+    }
+
     @Override
     public void setup(int id, List<DeviceData> devices) {
         RemoteControl remoteControl = new RemoteControl(devices.size());
