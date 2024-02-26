@@ -11,7 +11,7 @@ import java.util.List;
 public class RemoteLoader implements  IRemoteLoader{
 
     private static volatile RemoteLoader remote;
-    private RemoteLoader(){};
+    private RemoteLoader(){}
     HashMap<Integer, RemoteControl> remoteControls = new HashMap<>();
 
     public static IRemoteLoader getInstance() {
